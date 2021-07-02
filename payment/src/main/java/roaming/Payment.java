@@ -23,12 +23,14 @@ public class Payment {
     private String payDate;
     private String payCancelDate;
 
-    @PostPersist
-    public void onPostPersist(){
-        Paycanceled paycanceled = new Paycanceled();
-        BeanUtils.copyProperties(this, paycanceled);
-        paycanceled.publishAfterCommit();
-
+    @PostUpdate
+    public void onPostUpdate(){
+        if ("PayCanled".equals(this.getPayStatus()))
+        {
+//            PayCanceled payCanceled = new PayCanceled();
+//            BeanUtils.copyProperties(this, payCanceled);
+//            payCanceled.publishAfterCommit();
+        }                           
     }
 
     public Long getId() {

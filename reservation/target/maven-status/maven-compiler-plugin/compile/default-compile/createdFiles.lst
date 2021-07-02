@@ -1,0 +1,13 @@
+roaming\ReservationController.class
+roaming\Reservereturned.class
+roaming\PolicyHandler.class
+roaming\ReservationRepository.class
+roaming\AbstractEvent$1.class
+roaming\AbstractEvent.class
+roaming\Reservation.class
+roaming\external\Payment.class
+roaming\Reservecanceled.class
+roaming\external\PaymentService.class
+roaming\ReservationApplication.class
+roaming\config\kafka\KafkaProcessor.class
+roaming\Reserved.class

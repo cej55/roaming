@@ -1,0 +1,14 @@
+roaming\Rentalaccepted.class
+roaming\Romrental.class
+roaming\Reservereturned.class
+roaming\PolicyHandler.class
+roaming\AbstractEvent$1.class
+roaming\RomrentalRepository.class
+roaming\RomrentalController.class
+roaming\AbstractEvent.class
+roaming\RomrentalApplication.class
+roaming\Returnaccepted.class
+roaming\Rentalcanceled.class
+roaming\Reservecanceled.class
+roaming\config\kafka\KafkaProcessor.class
+roaming\Reserved.class

@@ -13,11 +13,11 @@ public class Reservecanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getCanceldate() {
+    public String getcancelDate() {
         return cancelDate;
     }
 
-    public void setCanceldate(String cancelDate) {
+    public void setcancelDate(String cancelDate) {
         this.cancelDate = cancelDate;
     }
 }

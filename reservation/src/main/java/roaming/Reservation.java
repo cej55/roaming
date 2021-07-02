@@ -24,28 +24,37 @@ public class Reservation {
     private String payCompany;
     private String userPhone;
 
-    @PostPersist
-    public void onPostPersist(){
-        Reserved reserved = new Reserved();
-        BeanUtils.copyProperties(this, reserved);
-        reserved.publishAfterCommit();
+    @PostUpdate
+    public void onPostUpdate(){
+        if ("Reserved".equals(this.getReserveStatus()))
+        {
+            Reserved reserved = new Reserved();
+            BeanUtils.copyProperties(this, reserved);
+            reserved.publishAfterCommit();
+            System.out.println("##### send event : Reserved  #####");   
+        } 
+//        else if ("ReserveCanceled".equals(this.getReserveStatus()))
+//        {
+//            ReserveCanceled reserveCanceled = new ReserveCanceled();
+//            BeanUtils.copyProperties(this, reserveCanceled);
+//            reserveCanceled.publishAfterCommit();
+//        }               
+//        else if ("ReserveReturned".equals(this.getReserveStatus()) )
+//        {
+//            ReserveReturned reserveReturned = new ReserveReturned();
+//            BeanUtils.copyProperties(this, reserveReturned);
+//            reserveReturned.publishAfterCommit();
+//            System.out.println("##### send event : ReserveReturned  #####");  
+//        }             
+    }
 
-        //Following code causes dependency to external APIs
-        // it is NOT A GOOD PRACTICE. instead, Event-Policy mapping is recommended.
+    @PostRemove
+    public void onPostRemove(){
 
-        roaming.external.Payment payment = new roaming.external.Payment();
-        // mappings goes here
-        Application.applicationContext.getBean(roaming.external.PaymentService.class)
-            .pay(payment);
+    }
 
-        Reservecanceled reservecanceled = new Reservecanceled();
-        BeanUtils.copyProperties(this, reservecanceled);
-        reservecanceled.publishAfterCommit();
-
-        Reservereturned reservereturned = new Reservereturned();
-        BeanUtils.copyProperties(this, reservereturned);
-        reservereturned.publishAfterCommit();
-
+    @PrePersist
+    public void onPrePersist(){
     }
 
     public Long getId() {

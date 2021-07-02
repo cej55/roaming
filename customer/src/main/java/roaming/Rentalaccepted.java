@@ -14,18 +14,18 @@ public class Rentalaccepted extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReservceid() {
+    public String getreserveId() {
         return reserveId;
     }
 
-    public void setReservceid(String reserveId) {
+    public void setreserveId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getRentAcceptDate() {
+    public String getrentAcceptDate() {
         return rentAcceptDate;
     }
 
-    public void setRentAcceptDate(String rentAcceptDate) {
+    public void setrentAcceptDate(String rentAcceptDate) {
         this.rentAcceptDate = rentAcceptDate;
     }
 }

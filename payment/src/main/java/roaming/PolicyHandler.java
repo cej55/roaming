@@ -1,5 +1,7 @@
 package roaming;
 
+import java.time.LocalDate;
+
 import roaming.config.kafka.KafkaProcessor;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -12,16 +14,25 @@ import org.springframework.stereotype.Service;
 public class PolicyHandler{
     @Autowired PaymentRepository paymentRepository;
 
-    @StreamListener(KafkaProcessor.INPUT)
-    public void wheneverReservecanceled_Cancelpay(@Payload Reservecanceled reservecanceled){
+//    @StreamListener(KafkaProcessor.INPUT)
+//    public void wheneverReserveCanceled_CancelPay(@Payload ReserveCanceled reserveCanceled){
 
-        if(!reservecanceled.validate()) return;
-        // Get Methods
+//        if(!reserveCanceled.validate()) return;
 
+        //System.out.println("\n\n##### listener CancelPay : " + reserveCanceled.toJson() + "\n\n");
 
-        // Sample Logic //
-        System.out.println("\n\n##### listener Cancelpay : " + reservecanceled.toJson() + "\n\n");
-    }
+//        String reserveId = reserveCanceled.getId().toString();
+//        Payment payment = paymentRepository.findByReserveId(reserveId);
+//        if (payment != null) {
+//            payment.setPayStatus("PayCanled");
+//            LocalDate localDate = LocalDate.now();                
+//            payment.setPayCancelDate(localDate.toString());              
+//            paymentRepository.save(payment); 
+
+//            System.out.println("##### payment caused by reservation cancel #####");
+//            System.out.println("reserveId : " + reserveId);    
+//        }            
+//    }
 
 
     @StreamListener(KafkaProcessor.INPUT)

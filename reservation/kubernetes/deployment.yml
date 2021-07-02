@@ -16,9 +16,27 @@ spec:
     spec:
       containers:
         - name: reservation
-          image: username/reservation:latest
+          image: safronacr.azurecr.io/roaming-reservation:latest
           ports:
             - containerPort: 8080
+          env:
+            - name: DB_IP
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-roaming
+                  key: DB_IP
+            - name: DB_SERVICE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-roaming
+                  key: DB_SERVICE_NAME             
+          resources:  # AutoScale Setting
+            limits:
+              cpu: 500m # max cpu
+              #memory: "200Mi"
+            requests:
+              cpu: 200m # start cpu
+              #memory: "100Mi"                   
           readinessProbe:
             httpGet:
               path: '/actuator/health'

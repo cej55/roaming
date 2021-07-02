@@ -14,18 +14,18 @@ public class Rentalcanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReservceid() {
+    public String getreservceId() {
         return reserveId;
     }
 
     public void setReservceid(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getRentCancelDate() {
+    public String getrentCancelDate() {
         return rentCancelDate;
     }
 
-    public void setRentCancelDate(String rentCancelDate) {
+    public void setrentCancelDate(String rentCancelDate) {
         this.rentCancelDate = rentCancelDate;
     }
 }

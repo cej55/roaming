@@ -15,29 +15,29 @@ public class MypageViewHandler {
 
 
     @Autowired
-    private MypageRepository mypageRepository;
+    private MypageRepository MypageRepository;
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenReserved_then_CREATE_1 (@Payload Reserved reserved) {
+    public void whenReserved_then_CREATE_1 (@Payload Reserved Reserved) {
         try {
 
-            if (!reserved.validate()) return;
+            if (!Reserved.validate()) return;
 
             // view 객체 생성
-            Mypage mypage = new Mypage();
+            Mypage Mypage = new Mypage();
             // view 객체에 이벤트의 Value 를 set 함
-            mypage.setReservceId(reserved.getId());
-            mypage.setPhoneId(reserved.getPhoneid());
-            mypage.setAmount(reserved.getAmount());
-            mypage.setReserveDate(reserved.getReservedate());
-            mypage.setCountry(reserved.getCountry());
-            mypage.setStatus("Reseve");
-            mypage.setUserPhone(reserved.getUserphone());
-            mypage.setPayType(reserved.getPaytype());
-            mypage.setPayCompany(reserved.getPaycompany());
-            mypage.setPayNumber(reserved.getPaynumber());
+//            Mypage.setreservceId(Reserved.getId());
+            Mypage.setphoneId(Reserved.getphoneId());
+            Mypage.setamount(Reserved.getamount());
+            Mypage.setreserveDate(Reserved.getreserveDate());
+            Mypage.setcountry(Reserved.getcountry());
+            Mypage.setstatus("Reseve");
+            Mypage.setuserPhone(Reserved.getuserPhone());
+            Mypage.setpayType(Reserved.getpayType());
+            Mypage.setpayCompany(Reserved.getpayCompany());
+            Mypage.setpayNumber(Reserved.getpayNumber());
             // view 레파지 토리에 save
-            mypageRepository.save(mypage);
+//            MypageRepository.save(Mypage);
 
         }catch (Exception e){
             e.printStackTrace();
@@ -46,18 +46,75 @@ public class MypageViewHandler {
 
 
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenReservecanceled_then_UPDATE_1(@Payload Reservecanceled reservecanceled) {
+    public void whenReservecanceled_then_UPDATE_1(@Payload Reservecanceled Reservecanceled) {
         try {
-            if (!reservecanceled.validate()) return;
+            if (!Reservecanceled.validate()) return;
                 // view 객체 조회
 
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(reservecanceled.getId());
-                    for(Mypage mypage : mypageList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setCancelDate(reservecanceled.getCanceldate());
-                    mypage.setStatus("CANCEL");
+//                    List<Mypage> MypageList = MypageRepository.findByreservceId(Reservecanceled.getId());
+//                    for(Mypage Mypage : MypageList){
+//                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+//                    Mypage.setcancelDate(Reservecanceled.getcancelDate());
+//                    Mypage.setstatus("CANCEL");
                 // view 레파지 토리에 save
-                mypageRepository.save(mypage);
+//                MypageRepository.save(Mypage);
+//                }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenReservereturned_then_UPDATE_2(@Payload Reservereturned Reservereturned) {
+        try {
+            if (!Reservereturned.validate()) return;
+                // view 객체 조회
+
+//                    List<Mypage> MypageList = MypageRepository.findByreservceId(Reservereturned.getId());
+//                    for(Mypage Mypage : MypageList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+//                    Mypage.setreturnDate(Reservereturned.getreturnDate());
+//                    Mypage.setstatus("RETURN");
+                // view 레파지 토리에 save
+//                MypageRepository.save(Mypage);
+//                }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+//    @StreamListener(KafkaProcessor.INPUT)
+//    public void whenPaycanceled_then_UPDATE_3(@Payload Paycanceled paycanceled) {
+//        try {
+//            if (!paycanceled.validate()) return;
+                // view 객체 조회
+
+//                    List<Mypage> MypageList = MypageRepository.findByreservceId(paycanceled.getReserveId());
+//                    for(Mypage Mypage : MypageList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+//                    Mypage.setPayCancelDate(paycanceled.getPayCancelDate());
+//                    Mypage.setstatus("PAY CANCEL");
+                // view 레파지 토리에 save
+//                MypageRepository.save(Mypage);
+//                }
+
+//        }catch (Exception e){
+//            e.printStackTrace();
+//        }
+//    }
+    @StreamListener(KafkaProcessor.INPUT)
+    public void whenRentalaccepted_then_UPDATE_4(@Payload Rentalaccepted Rentalaccepted) {
+        try {
+            if (!Rentalaccepted.validate()) return;
+                // view 객체 조회
+
+                    List<Mypage> MypageList = MypageRepository.findByreservceId(Rentalaccepted.getreserveId());
+                    for(Mypage Mypage : MypageList){
+                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+                    Mypage.setrentAcceptDate(Rentalaccepted.getrentAcceptDate());
+                    Mypage.setstatus("RENT ACCEPT");
+                // view 레파지 토리에 save
+                MypageRepository.save(Mypage);
                 }
 
         }catch (Exception e){
@@ -65,76 +122,19 @@ public class MypageViewHandler {
         }
     }
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenReservereturned_then_UPDATE_2(@Payload Reservereturned reservereturned) {
+    public void whenRentalcanceled_then_UPDATE_5(@Payload Rentalcanceled Rentalcanceled) {
         try {
-            if (!reservereturned.validate()) return;
+            if (!Rentalcanceled.validate()) return;
                 // view 객체 조회
 
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(reservereturned.getId());
-                    for(Mypage mypage : mypageList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setReturnDate(reservereturned.getReturndate());
-                    mypage.setStatus("RETURN");
+//                    List<Mypage> MypageList = MypageRepository.findByreservceId(Rentalcanceled.getreservceid());
+//                    for(Mypage Mypage : MypageList){
+//                    // view 객체에 이벤트의 eventDirectValue 를 set 함
+//                    Mypage.setrentCancelDate(Rentalcanceled.getrentCancelDate());
+//                    Mypage.setstatus("RENTAL CANCEL");
                 // view 레파지 토리에 save
-                mypageRepository.save(mypage);
-                }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    @StreamListener(KafkaProcessor.INPUT)
-    public void whenPaycanceled_then_UPDATE_3(@Payload Paycanceled paycanceled) {
-        try {
-            if (!paycanceled.validate()) return;
-                // view 객체 조회
-
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(paycanceled.getReserveId());
-                    for(Mypage mypage : mypageList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setPayCancelDate(paycanceled.getPayCancelDate());
-                    mypage.setStatus("PAY CANCEL");
-                // view 레파지 토리에 save
-                mypageRepository.save(mypage);
-                }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    @StreamListener(KafkaProcessor.INPUT)
-    public void whenRentalaccepted_then_UPDATE_4(@Payload Rentalaccepted rentalaccepted) {
-        try {
-            if (!rentalaccepted.validate()) return;
-                // view 객체 조회
-
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(rentalaccepted.getReservceid());
-                    for(Mypage mypage : mypageList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setRentAcceptDate(rentalaccepted.getRentAcceptDate());
-                    mypage.setStatus("RENT ACCEPT");
-                // view 레파지 토리에 save
-                mypageRepository.save(mypage);
-                }
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    @StreamListener(KafkaProcessor.INPUT)
-    public void whenRentalcanceled_then_UPDATE_5(@Payload Rentalcanceled rentalcanceled) {
-        try {
-            if (!rentalcanceled.validate()) return;
-                // view 객체 조회
-
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(rentalcanceled.getReservceid());
-                    for(Mypage mypage : mypageList){
-                    // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setRentCancelDate(rentalcanceled.getRentCancelDate());
-                    mypage.setStatus("RENTAL CANCEL");
-                // view 레파지 토리에 save
-                mypageRepository.save(mypage);
-                }
+//                MypageRepository.save(Mypage);
+//                }
 
         }catch (Exception e){
             e.printStackTrace();
@@ -146,13 +146,13 @@ public class MypageViewHandler {
             if (!returnaccepted.validate()) return;
                 // view 객체 조회
 
-                    List<Mypage> mypageList = mypageRepository.findByReservceId(returnaccepted.getReservceid());
-                    for(Mypage mypage : mypageList){
+                    List<Mypage> MypageList = MypageRepository.findByreservceId(returnaccepted.getReservceid());
+                    for(Mypage Mypage : MypageList){
                     // view 객체에 이벤트의 eventDirectValue 를 set 함
-                    mypage.setRetAcceptDate(returnaccepted.getRetAcceptDate());
-                    mypage.setStatus("RETURN ACCEPT");
+//                    Mypage.setretAcceptDate(returnaccepted.getretAcceptDate());
+                    Mypage.setstatus("RETURN ACCEPT");
                 // view 레파지 토리에 save
-                mypageRepository.save(mypage);
+                MypageRepository.save(Mypage);
                 }
 
         }catch (Exception e){

@@ -35,116 +35,116 @@ public class Mypage {
         public void setId(Long id) {
             this.id = id;
         }
-        public String getReservceId() {
+        public String getreservceId() {
             return reservceId;
         }
 
-        public void setReservceId(String reservceId) {
+        public void setreservceId(String reservceId) {
             this.reservceId = reservceId;
         }
-        public String getAmount() {
+        public String getamount() {
             return amount;
         }
 
-        public void setAmount(String amount) {
+        public void setamount(String amount) {
             this.amount = amount;
         }
-        public String getReserveDate() {
+        public String getreserveDate() {
             return reserveDate;
         }
 
-        public void setReserveDate(String reserveDate) {
+        public void setreserveDate(String reserveDate) {
             this.reserveDate = reserveDate;
         }
-        public String getCountry() {
+        public String getcountry() {
             return country;
         }
 
-        public void setCountry(String country) {
+        public void setcountry(String country) {
             this.country = country;
         }
-        public String getReturnDate() {
+        public String getreturnDate() {
             return returnDate;
         }
 
-        public void setReturnDate(String returnDate) {
+        public void setreturnDate(String returnDate) {
             this.returnDate = returnDate;
         }
-        public String getCancelDate() {
+        public String getcancelDate() {
             return cancelDate;
         }
 
-        public void setCancelDate(String cancelDate) {
+        public void setcancelDate(String cancelDate) {
             this.cancelDate = cancelDate;
         }
-        public String getStatus() {
+        public String getstatus() {
             return status;
         }
 
-        public void setStatus(String status) {
+        public void setstatus(String status) {
             this.status = status;
         }
-        public String getRentAcceptDate() {
+        public String getrentAcceptDate() {
             return rentAcceptDate;
         }
 
-        public void setRentAcceptDate(String rentAcceptDate) {
+        public void setrentAcceptDate(String rentAcceptDate) {
             this.rentAcceptDate = rentAcceptDate;
         }
-        public String getRentCancelDate() {
+        public String getrentCancelDate() {
             return rentCancelDate;
         }
 
-        public void setRentCancelDate(String rentCancelDate) {
+        public void setrentCancelDate(String rentCancelDate) {
             this.rentCancelDate = rentCancelDate;
         }
-        public String getRetAcceptDate() {
+        public String getretAcceptDate() {
             return retAcceptDate;
         }
 
-        public void setRetAcceptDate(String retAcceptDate) {
+        public void setretAcceptDate(String retAcceptDate) {
             this.retAcceptDate = retAcceptDate;
         }
-        public String getPayCancelDate() {
+        public String getpayCancelDate() {
             return payCancelDate;
         }
 
-        public void setPayCancelDate(String payCancelDate) {
+        public void setpayCancelDate(String payCancelDate) {
             this.payCancelDate = payCancelDate;
         }
-        public String getUserPhone() {
+        public String getuserPhone() {
             return userPhone;
         }
 
-        public void setUserPhone(String userPhone) {
+        public void setuserPhone(String userPhone) {
             this.userPhone = userPhone;
         }
-        public String getPhoneId() {
+        public String getphoneId() {
             return phoneId;
         }
 
-        public void setPhoneId(String phoneId) {
+        public void setphoneId(String phoneId) {
             this.phoneId = phoneId;
         }
-        public String getPayType() {
+        public String getpayType() {
             return payType;
         }
 
-        public void setPayType(String payType) {
+        public void setpayType(String payType) {
             this.payType = payType;
         }
-        public String getPayCompany() {
+        public String getpayCompany() {
             return payCompany;
         }
 
-        public void setPayCompany(String payCompany) {
+        public void setpayCompany(String payCompany) {
             this.payCompany = payCompany;
         }
-        public String getPayNumber() {
+        public String getpayNumber() {
             return payNumber;
         }
 
-        public void setPayNumber(String payNumber) {
+        public void setpayNumber(String payNumber) {
             this.payNumber = payNumber;
         }
 

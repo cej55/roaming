@@ -13,11 +13,11 @@ public class Reservereturned extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReturndate() {
+    public String getreturnDate() {
         return returnDate;
     }
 
-    public void setReturndate(String returnDate) {
+    public void setreturnDate(String returnDate) {
         this.returnDate = returnDate;
     }
 }
