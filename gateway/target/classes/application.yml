@@ -1,0 +1,74 @@
+server:
+  port: 8088
+
+---
+
+spring:
+  profiles: default
+  cloud:
+    gateway:
+      routes:
+        - id: reservation
+          uri: http://localhost:8081
+          predicates:
+            - Path=/reservations/**, /env/**, /reserve/**, /cancel/**, /resreturn/**, /reserve**, /cancel**, /return**  # configMap 환경변수 확인, 예약, 취소, 반납 ui 추가  
+        - id: romrental
+          uri: http://localhost:8082
+          predicates:
+            - Path=/romrentals/**,  /romrentaled/**, /romretrieved/**, /romrental_action**, /romretrieve_action**          
+        - id: payment
+          uri: http://localhost:8083
+          predicates:
+            - Path=/payments/**, /pay/**   # 동기식 호출 url 추가(/pay) 
+        - id: customer
+          uri: http://localhost:8084
+          predicates:
+            - Path=/customers/**, /myPages/**, /mypage** # , 추가 두개 이상일 경우 콤마로 구분
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    gateway:
+      routes:
+        - id: reservation
+          uri: http://reservation:8080
+          predicates:
+            - Path=/reservations/**, /env/**, /reserve/**, /cancel/**, /resreturn/**, /reserve**, /cancel**, /return**  # configMap 환경변수 확인, 예약, 취소, 반납 ui 추가 
+        - id: romrental
+          uri: http://romrental:8080
+          predicates:
+            - Path=/romrentals/**,  /romrentaled/**, /romretrieved/**, /romrental_action**, /romretrieve_action**
+        - id: payment
+          uri: http://payment:8080
+          predicates:
+            - Path=/payments/**, /pay/**   # 동기식 호출 url 추가(/pay) 
+        - id: customer
+          uri: http://customer:8080
+          predicates:
+            - Path=/customers/**, /myPages/**, /mypage** # , 추가 두개 이상일 경우 콤마로 구분
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "*"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+
+server:
+  port: 8080

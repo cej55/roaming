@@ -42,16 +42,16 @@ public boolean pay(HttpServletRequest request, HttpServletResponse response)
                 System.out.println("##### payCompany : " + payCompany);
 
                 Payment payment = new Payment();
-                payment.setReserveId(reserveId);
+                payment.setreserveId(reserveId);
 //                payment.setphoneId(phoneId);
 
-                payment.setAmount(amount);
+                payment.setamount(amount);
 
-                payment.setUserPhone(userPhone);
-                payment.setPayType(payType);
-                payment.setPayNumber(payNumber);
-                payment.setPayCompany(payCompany);
-                payment.setPayStatus("Payed");
+                payment.setuserPhone(userPhone);
+                payment.setpayType(payType);
+                payment.setpayNumber(payNumber);
+                payment.setpayCompany(payCompany);
+                payment.setpayStatus("Payed");
                                 
                 payment  = paymentRepository.save(payment);
 
