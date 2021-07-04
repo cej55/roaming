@@ -14,18 +14,18 @@ public class Paycanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReserveId() {
+    public String getreserveId() {
         return reserveId;
     }
 
-    public void setReserveId(String reserveId) {
+    public void setreserveId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getPayCancelDate() {
+    public String getpayCancelDate() {
         return payCancelDate;
     }
 
-    public void setPayCancelDate(String payCancelDate) {
+    public void setpayCancelDate(String payCancelDate) {
         this.payCancelDate = payCancelDate;
     }
 }

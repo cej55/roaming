@@ -12,27 +12,27 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class PolicyHandler{
-    @Autowired PaymentRepository paymentRepository;
+    @Autowired PaymentRepository PaymentRepository;
 
-//    @StreamListener(KafkaProcessor.INPUT)
-//    public void wheneverReserveCanceled_CancelPay(@Payload ReserveCanceled reserveCanceled){
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverReservecanceled_CancelPay(@Payload Reservecanceled Reservecanceled){
 
-//        if(!reserveCanceled.validate()) return;
+        if(!Reservecanceled.validate()) return;
 
-        //System.out.println("\n\n##### listener CancelPay : " + reserveCanceled.toJson() + "\n\n");
+        //System.out.println("\n\n##### listener CancelPay : " + Reservecanceled.toJson() + "\n\n");
 
-//        String reserveId = reserveCanceled.getId().toString();
-//        Payment payment = paymentRepository.findByReserveId(reserveId);
-//        if (payment != null) {
-//            payment.setPayStatus("PayCanled");
-//            LocalDate localDate = LocalDate.now();                
-//            payment.setPayCancelDate(localDate.toString());              
-//            paymentRepository.save(payment); 
+        String reserveId = Reservecanceled.getId().toString();
+        Payment Payment = PaymentRepository.findByreserveId(reserveId);
+        if (Payment != null) {
+            Payment.setpayStatus("PayCanled");
+            LocalDate localDate = LocalDate.now();                
+            Payment.setpayCancelDate(localDate.toString());              
+            PaymentRepository.save(Payment); 
 
-//            System.out.println("##### payment caused by reservation cancel #####");
-//            System.out.println("reserveId : " + reserveId);    
-//        }            
-//    }
+            System.out.println("##### Payment caused by reservation cancel #####");
+            System.out.println("reserveId : " + reserveId);    
+        }            
+    }
 
 
     @StreamListener(KafkaProcessor.INPUT)

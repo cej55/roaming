@@ -3,7 +3,7 @@ package roaming;
 public class Rentalcanceled extends AbstractEvent {
 
     private Long id;
-    private String reservceid;
+    private String reservceId;
     private String rentCancelDate;
 
     public Rentalcanceled(){
@@ -17,12 +17,12 @@ public class Rentalcanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReservceid() {
-        return reservceid;
+    public String getreservceId() {
+        return reservceId;
     }
 
-    public void setReservceid(String reservceid) {
-        this.reservceid = reservceid;
+    public void setreservceId(String reservceId) {
+        this.reservceId = reservceId;
     }
     public String getRentCancelDate() {
         return rentCancelDate;

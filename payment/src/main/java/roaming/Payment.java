@@ -27,9 +27,9 @@ public class Payment {
     public void onPostUpdate(){
         if ("PayCanled".equals(this.getpayStatus()))
         {
-//            PayCanceled payCanceled = new PayCanceled();
-//            BeanUtils.copyProperties(this, payCanceled);
-//            payCanceled.publishAfterCommit();
+            Paycanceled Paycanceled = new Paycanceled();
+            BeanUtils.copyProperties(this, Paycanceled);
+            Paycanceled.publishAfterCommit();
         }                           
     }
 

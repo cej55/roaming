@@ -16,6 +16,7 @@ public class Romrental {
     private String phoneId;
     private String country;
     private String amount;
+    private String userPhone;
     private String reserveDate;
     private String reservCancelDate;
     private String reservReturnDate;
@@ -56,10 +57,16 @@ public class Romrental {
     public void setId(Long id) {
         this.id = id;
     }
+    public String getuserPhone() {
+        return userPhone;
+    }
+
+    public void setuserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }    
     public String getreserveId() {
         return reserveId;
     }
-
     public void setreserveId(String reserveId) {
         this.reserveId = reserveId;
     }
@@ -70,7 +77,7 @@ public class Romrental {
     public void setphoneId(String phoneId) {
         this.phoneId = phoneId;
     }
-    public String getCountry() {
+    public String getcountry() {
         return country;
     }
 

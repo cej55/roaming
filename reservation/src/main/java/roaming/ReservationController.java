@@ -16,7 +16,7 @@ import java.util.Optional;
  public class ReservationController {
 
     @Autowired
-    ReservationRepository reservationRepository;
+    ReservationRepository ReservationRepository;
 
     @RequestMapping(value = "/env",
     method = RequestMethod.GET,
@@ -64,20 +64,20 @@ import java.util.Optional;
         System.out.println("##### payNumber : " + payNumber);
         System.out.println("##### payCompany : " + payCompany);
 
-        Reservation reservation = new Reservation();
-        reservation.setPhoneId(phoneId);
-        reservation.setUserPhone(userPhone);
+        Reservation Reservation = new Reservation();
+        Reservation.setphoneId(phoneId);
+        Reservation.setuserPhone(userPhone);
 
-        reservation.setAmount(amount);
+        Reservation.setamount(amount);
 
-        reservation.setReserveDate(reserveDate);
-        reservation.setPayType(payType);
-        reservation.setPayNumber(payNumber);
-        reservation.setPayCompany(payCompany);
+        Reservation.setreserveDate(reserveDate);
+        Reservation.setpayType(payType);
+        Reservation.setpayNumber(payNumber);
+        Reservation.setpayCompany(payCompany);
                         
-        reservation  = reservationRepository.save(reservation);
+        Reservation  = ReservationRepository.save(Reservation);
 
-        String reserveId = Long.toString(reservation.getId());        
+        String reserveId = Long.toString(Reservation.getId());        
         System.out.println("##### reserveId : " + reserveId);
 
         boolean ret = false;
@@ -97,8 +97,8 @@ import java.util.Optional;
             status = "ReserveFailed";
         } 
 
-        reservation.setReserveStatus(status);
-        reservation  = reservationRepository.save(reservation);
+        Reservation.setreserveStatus(status);
+        Reservation  = ReservationRepository.save(Reservation);
 
         return status + " ReserveNumber : " + reserveId;          
     }
@@ -116,18 +116,18 @@ import java.util.Optional;
         System.out.println("##### reserveId : " + reserveId);
         System.out.println("##### cancelDate : " + cancelDate);        
 
-        Optional<Reservation> reservationOptional = reservationRepository.findById(Long.parseLong(reserveId));
+        Optional<Reservation> ReservationOptional = ReservationRepository.findById(Long.parseLong(reserveId));
 
         String status = "ReserveCanceled";          
 
-        if (reservationOptional.isPresent()) {
-            Reservation reservation = reservationOptional.get();
-            String curStatus = reservation.getReserveStatus();
+        if (ReservationOptional.isPresent()) {
+            Reservation Reservation = ReservationOptional.get();
+            String curStatus = Reservation.getreserveStatus();
             if ("Reserved".equals(curStatus)) {
-                reservation.setCancelDate(cancelDate);
-                reservation.setReserveStatus(status);
+                Reservation.setcancelDate(cancelDate);
+                Reservation.setreserveStatus(status);
                 ReservationApplication.applicationContext.getBean(roaming.ReservationRepository.class)
-                .save(reservation);
+                .save(Reservation);
                 }
             else {
                 status = "reserve status is not Reserved(current : " + curStatus + ")"; 
@@ -153,18 +153,18 @@ import java.util.Optional;
         System.out.println("##### reserveId : " + reserveId);
         System.out.println("##### returnDate : " + returnDate);
 
-        Optional<Reservation> reservationOptional = reservationRepository.findById(Long.parseLong(reserveId));
+        Optional<Reservation> ReservationOptional = ReservationRepository.findById(Long.parseLong(reserveId));
 
         String status = "ReserveReturned";                     
-        if (reservationOptional.isPresent()) {
-            Reservation reservation = reservationOptional.get();
-            String curStatus = reservation.getReserveStatus();
+        if (ReservationOptional.isPresent()) {
+            Reservation Reservation = ReservationOptional.get();
+            String curStatus = Reservation.getreserveStatus();
             if ("Reserved".equals(curStatus)) {            
-                reservation.setReturnDate(returnDate);
-                reservation.setReserveStatus(status);
+                Reservation.setreturnDate(returnDate);
+                Reservation.setreserveStatus(status);
 
                 ReservationApplication.applicationContext.getBean(roaming.ReservationRepository.class)
-                .save(reservation);
+                .save(Reservation);
             }
             else {
                 status = "reserve status is not Reserved(current : " + curStatus + ")"; 

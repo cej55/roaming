@@ -26,7 +26,7 @@ public class PolicyHandler{
 //      Customer customer = customerRepository.findByReserveId(reserveId);
 //        if (customer != null) {
 //            customer.setStatus("PayCanceled");
-//            customer.setPayCancelDate(payCanceled.getPayCancelDate());            
+//            customer.setpayCancelDate(payCanceled.getpayCancelDate());            
 //            customerRepository.save(customer); 
 
 //            System.out.println("##### pay status changed by 'payCanceled' #####");

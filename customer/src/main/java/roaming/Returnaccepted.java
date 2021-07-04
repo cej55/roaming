@@ -14,18 +14,18 @@ public class Returnaccepted extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReservceid() {
+    public String getreservceId() {
         return reserveId;
     }
 
-    public void setReservceid(String reserveId) {
+    public void setreservceId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getRetAcceptDate() {
+    public String getretAcceptDate() {
         return retAcceptDate;
     }
 
-    public void setRetAcceptDate(String retAcceptDate) {
+    public void setretAcceptDate(String retAcceptDate) {
         this.retAcceptDate = retAcceptDate;
     }
 }

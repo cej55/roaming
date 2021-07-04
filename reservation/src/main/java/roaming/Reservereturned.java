@@ -3,7 +3,7 @@ package roaming;
 public class Reservereturned extends AbstractEvent {
 
     private Long id;
-    private String returndate;
+    private String returnDate;
 
     public Reservereturned(){
         super();
@@ -16,11 +16,11 @@ public class Reservereturned extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReturndate() {
-        return returndate;
+    public String getreturnDate() {
+        return returnDate;
     }
 
-    public void setReturndate(String returndate) {
-        this.returndate = returndate;
+    public void setreturnDate(String returnDate) {
+        this.returnDate = returnDate;
     }
 }

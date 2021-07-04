@@ -7,7 +7,7 @@ public class Payment {
     private String phoneId;
     private String amount;
     private String userPhone;
-    private String payYype;
+    private String payType;
     private String payNumber;
     private String payCompany;
     private String payStatus;
@@ -20,64 +20,64 @@ public class Payment {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReserveId() {
+    public String getreserveId() {
         return reserveId;
     }
-    public void setReserveId(String reserveId) {
+    public void setreserveId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getPhoneId() {
+    public String getphoneId() {
         return phoneId;
     }
-    public void setPhoneId(String phoneId) {
+    public void setphoneId(String phoneId) {
         this.phoneId = phoneId;
     }
-    public String getAmount() {
+    public String getamount() {
         return amount;
     }
-    public void setAmount(String amount) {
+    public void setamount(String amount) {
         this.amount = amount;
     }
-    public String getUserPhone() {
+    public String getuserPhone() {
         return userPhone;
     }
-    public void setUserPhone(String userPhone) {
+    public void setuserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
-    public String getPayYype() {
-        return payYype;
+    public String getpayType() {
+        return payType;
     }
-    public void setPayYype(String payYype) {
-        this.payYype = payYype;
+    public void setpayType(String payType) {
+        this.payType = payType;
     }
-    public String getPayNumber() {
+    public String getpayNumber() {
         return payNumber;
     }
-    public void setPayNumber(String payNumber) {
+    public void setpayNumber(String payNumber) {
         this.payNumber = payNumber;
     }
-    public String getPayCompany() {
+    public String getpayCompany() {
         return payCompany;
     }
-    public void setPayCompany(String payCompany) {
+    public void setpayCompany(String payCompany) {
         this.payCompany = payCompany;
     }
-    public String getPayStatus() {
+    public String getpayStatus() {
         return payStatus;
     }
-    public void setPayStatus(String payStatus) {
+    public void setpayStatus(String payStatus) {
         this.payStatus = payStatus;
     }
-    public String getPayDate() {
+    public String getpayDate() {
         return payDate;
     }
-    public void setPayDate(String payDate) {
+    public void setpayDate(String payDate) {
         this.payDate = payDate;
     }
-    public String getPayCancelDate() {
+    public String getpayCancelDate() {
         return payCancelDate;
     }
-    public void setPayCancelDate(String payCancelDate) {
+    public void setpayCancelDate(String payCancelDate) {
         this.payCancelDate = payCancelDate;
     }
 

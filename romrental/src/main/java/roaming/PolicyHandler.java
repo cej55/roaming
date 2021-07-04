@@ -37,15 +37,15 @@ public class PolicyHandler{
         Romrental.setphoneId(phoneId);
 //        Romrental.setrentalAddr(rentalAddr);
 //        Romrental.setRetrieveAddr(retrieveAddr);
-//        Romrental.setuserPhone(userPhone);
+        Romrental.setuserPhone(userPhone);
         Romrental.setamount(amount);
 //        Romrental.setpayType(payType);
 //        Romrental.setpayNumber(payNumber);
 //        Romrental.setpayCompany(payCompany);
-//        Romrental.setreservedDate(reserveDate);
+        Romrental.setreserveDate(reserveDate);
         LocalDate localDate = LocalDate.now();                
         Romrental.setrentAcceptDate(localDate.toString());
-//        Romrental.setrentalStatus("RentalAccepted");
+        Romrental.setrentalStatus("RentalAccepted");
         RomrentalRepository.save(Romrental);           
 
         System.out.println("##### rental accepted by reservation reserve #####");
@@ -63,7 +63,7 @@ public class PolicyHandler{
         String reserveId = Reservecanceled.getId().toString();
         Romrental Romrental = RomrentalRepository.findByreserveId(reserveId);
         if (Romrental != null) {
-//            Romrental.setrentalStatus("RentalCanceled");
+            Romrental.setrentalStatus("RentalCanceled");
             LocalDate localDate = LocalDate.now();                
             Romrental.setrentCancelDate(localDate.toString());            
             RomrentalRepository.save(Romrental); 
@@ -86,7 +86,7 @@ public class PolicyHandler{
         String reserveId = Reservereturned.getId().toString();
         Romrental Romrental = RomrentalRepository.findByreserveId(reserveId);
         if (Romrental != null) {
-//            Romrental.setrentalStatus("ReturnAccepted");
+            Romrental.setrentalStatus("ReturnAccepted");
             LocalDate localDate = LocalDate.now();                
             Romrental.setretAcceptDate(localDate.toString());            
             RomrentalRepository.save(Romrental); 

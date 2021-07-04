@@ -3,7 +3,7 @@ package roaming;
 public class Reservecanceled extends AbstractEvent {
 
     private Long id;
-    private String canceldate;
+    private String cancelDate;
 
     public Reservecanceled(){
         super();
@@ -16,11 +16,11 @@ public class Reservecanceled extends AbstractEvent {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getCanceldate() {
-        return canceldate;
+    public String getcancelDate() {
+        return cancelDate;
     }
 
-    public void setCanceldate(String canceldate) {
-        this.canceldate = canceldate;
+    public void setcancelDate(String cancelDate) {
+        this.cancelDate = cancelDate;
     }
 }

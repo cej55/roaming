@@ -13,7 +13,7 @@ import java.util.List;
  public class PaymentController {
 
         @Autowired
-        PaymentRepository paymentRepository;
+        PaymentRepository PaymentRepository;
 
 @RequestMapping(value = "/pay",
         method = RequestMethod.POST,
@@ -43,7 +43,7 @@ public boolean pay(HttpServletRequest request, HttpServletResponse response)
 
                 Payment payment = new Payment();
                 payment.setreserveId(reserveId);
-//                payment.setphoneId(phoneId);
+                payment.setphoneId(phoneId);
 
                 payment.setamount(amount);
 
@@ -53,7 +53,7 @@ public boolean pay(HttpServletRequest request, HttpServletResponse response)
                 payment.setpayCompany(payCompany);
                 payment.setpayStatus("Payed");
                                 
-                payment  = paymentRepository.save(payment);
+                payment  = PaymentRepository.save(payment);
 
                 if (payment != null) {
                         System.out.println("##### /payment/pay  save success #####");
