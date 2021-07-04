@@ -186,7 +186,7 @@ mvn spring-boot:run
 cd payment
 mvn spring-boot:run 
 
-cd rental
+cd romrental
 mvn spring-boot:run  
 
 cd reservation
@@ -198,7 +198,7 @@ mvn spring-boot:run
 - 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다: (예시는 Payment 마이크로 서비스). 이때 가능한 현업에서 사용하는 언어 (유비쿼터스 랭귀지)를 그대로 사용하려고 노력했다. 하지만, 일부 구현에 있어서 영문이 아닌 경우는 실행이 불가능한 경우가 있기 때문에 계속 사용할 방법은 아닌것 같다. (Maven pom.xml, Kafka의 topic id, FeignClient 의 서비스 id 등은 한글로 식별자를 사용하는 경우 오류가 발생하는 것을 확인하였다)
 
 ```
-package carsharing;
+package roaming;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
@@ -213,7 +213,7 @@ public class Payment {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String reserveId;
-    private String carId;
+    private String phoneId;
     private String amount;
     private String userPhone;
     private String payType;
@@ -248,8 +248,8 @@ public class Payment {
     public void setReserveId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getCarId() {
-        return carId;
+    public String getphoneId() {
+        return phoneId;
     }
 
     public void setCarId(String carId) {
