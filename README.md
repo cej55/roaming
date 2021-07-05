@@ -134,7 +134,7 @@
 ### 완성본에 대한 기능적/비기능적 요구사항을 커버하는지 검증
 
 
-![image](https://user-images.githubusercontent.com/84000909/122479068-787ffe00-d005-11eb-8265-ca229d308a0c.png)
+![기능적](https://user-images.githubusercontent.com/84000910/124478899-a2486b80-dde0-11eb-8ec6-be253c615114.png)
 
     
     고객이 로밍대여일자/로밍국가/단말기를 선택하여 예약을 한다.(ok)
