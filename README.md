@@ -823,10 +823,10 @@ kubectl edit svc kiali -n istio-system
 2-3. 모니터링 시스템 접속
 ![image](https://user-images.githubusercontent.com/84000910/124489850-66b39e80-ddec-11eb-8ba4-5c6abb35413b.png)
 
-![image](https://user-images.githubusercontent.com/84000909/122344703-087c6400-cf82-11eb-9aa7-d3e240e04509.png)
+![image](https://user-images.githubusercontent.com/84000910/124490410-040ed280-dded-11eb-8d1b-fd938ab182fd.png)
 
 ```
-http://20.41.97.46:20001/ (admin/admin)
+http://20.194.106.104:20001/kiali (admin/admin)
 ```
 3. 네임스페이스 생성
 ```
