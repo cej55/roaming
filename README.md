@@ -880,7 +880,7 @@ IP주소 확인
 ![image](https://user-images.githubusercontent.com/84000909/122350982-a8d58700-cf88-11eb-97d2-1847405c0153.png)
 
 정상 동작일떄 확인
-siege -c1 -t30S -v --content-type "application/json" 'http://20.194.98.16:8080/reservations POST {"carId": "g90", "amonut": "1"}'
+siege -c1 -t30S -v --content-type "application/json" 'http://52.141.59.66:8080/reservations POST {"phoneId": "010", "amonut": "1"}'
 ![image](https://user-images.githubusercontent.com/84000909/122351081-c3a7fb80-cf88-11eb-9658-e3675b8da901.png)
 
 
