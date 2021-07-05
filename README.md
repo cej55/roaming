@@ -775,11 +775,11 @@ kubelctl get all -n ns-carsharing  결과
 ## Config Map (Reservation 배포전에 선배포)
 
 * Config Map을 환경변수 등록함
-kubectl create configmap cm-carsharing --namespace="ns-carsharing" --from-literal=DB_IP=10.20.30.1 --from-literal=DB_SERVICE_NAME=CARS
+kubectl create configmap cm-roaming --namespace="ns-roaming" --from-literal=DB_IP=10.20.30.1 --from-literal=DB_SERVICE_NAME=ROAMING
 
-kubectl get cm -n ns-carsharing
- 
-![image](https://user-images.githubusercontent.com/84000909/122322316-3fda1900-cf60-11eb-838d-895ee6df611a.png)
+kubectl get cm -n ns-roaming
+
+![image](https://user-images.githubusercontent.com/84000910/124408353-089da180-dd81-11eb-87e6-7203bcb07a40.png)
 
 
 * 등록된 Config Map을 조회함
