@@ -1,6 +1,4 @@
 # roaming
-![image](https://user-images.githubusercontent.com/84000909/121766905-113ef580-cb90-11eb-9ae3-2dfef9544f9e.png)
-
 
 # 로밍
 
