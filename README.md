@@ -821,7 +821,8 @@ kubectl edit svc kiali -n istio-system
 :wq!
 ```
 2-3. 모니터링 시스템 접속
-![image](https://user-images.githubusercontent.com/84000910/124494745-1dfee400-ddf2-11eb-8c61-d2e355353ac6.png)
+![image](https://user-images.githubusercontent.com/84000910/124495124-abdacf00-ddf2-11eb-8a11-7fb190ff4518.png)
+![image](https://user-images.githubusercontent.com/84000910/124495159-bac18180-ddf2-11eb-9062-d39a8dedc80d.png)
 
 ```
 http://20.194.106.104:20001/kiali (admin/admin)
