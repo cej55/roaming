@@ -932,19 +932,14 @@ siege -c200 -t30S -v http://10.0.206.105:8080/reservations
 - 오토스케일이 어떻게 되고 있는지 새로운 터미널에서 모니터링을 걸어둔다:
 
 watch -n 1 kubectl get pod -n ns-roaming
-![image](https://user-images.githubusercontent.com/84000909/122340681-8b4ef000-cf7d-11eb-8df2-1338c714f787.png)
 
-
-
-
-
-![image](https://user-images.githubusercontent.com/84000909/122340857-c3563300-cf7d-11eb-9700-7b0f1d6e9d7a.png)
+![image](https://user-images.githubusercontent.com/84000910/124496680-b4cca000-ddf4-11eb-92f6-bc5d315a3607.png)
 
 - 어느정도 시간이 흐른 후 (약 30초) 스케일 아웃이 벌어지는 것을 확인할 수 있다:
-- ![image](https://user-images.githubusercontent.com/84000909/122339326-e41d8900-cf7b-11eb-9d77-49cadf242c6c.png)
+![image](https://user-images.githubusercontent.com/84000910/124496666-b0a08280-ddf4-11eb-9514-076ea7cc1586.png)
 
 - siege 의 로그를 보아도 전체적인 성공률이 높아진 것을 확인 할 수 있다. 
-![image](https://user-images.githubusercontent.com/84000909/122341079-0b755580-cf7e-11eb-9f75-c0548f033594.png)
+![image](https://user-images.githubusercontent.com/84000910/124496746-c8780680-ddf4-11eb-8eac-1fe7ac0175fc.png)
 
 
 ## 무정지 재배포 - (Readiness Probe )
