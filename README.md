@@ -843,22 +843,12 @@ kubectl get namespace istio-test-ns -o yaml
 
 4 namespace로 서비스 재배포
 ```
-kubectl create deploy gateway --image=user04skccacr.azurecr.io/carsharing-gateway:latest -n istio-test-ns
-kubectl create deploy reservation --image=user04skccacr.azurecr.io/carsharing-reservation:latest -n istio-test-ns
-kubectl create deploy rental --image=user04skccacr.azurecr.io/carsharing-rental:latest -n istio-test-ns
-kubectl create deploy payment --image=user04skccacr.azurecr.io/carsharing-payment:latest -n istio-test-ns
-kubectl create deploy customer --image=user04skccacr.azurecr.io/carsharing-customer:latest -n istio-test-ns
-kubectl expose deploy gatewayn --type="LoadBalancer" --port=8080 -n istio-test-ns
-kubectl expose deploy reservation --type="LoadBalancer" --port=8080 -n istio-test-ns
-kubectl expose deploy rental --type="LoadBalancer" --port=8080 -n istio-test-ns
-kubectl expose deploy payment --type="LoadBalancer" --port=8080 -n istio-test-ns
-kubectl expose deploy customer --type="LoadBalancer" --port=8080 -n istio-test-ns
-
+kubectl create deploy gateway --image=user1414acr.azurecr.io/roaming-gateway:latest -n istio-test-ns
+kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n istio-test-ns
 kubectl create deploy siege --image=apexacme/siege-nginx -n  istio-test-ns
 ```
 생성된 Container 확인
-![image](https://user-images.githubusercontent.com/84000909/122350024-c9e9a800-cf87-11eb-982d-eaba2cf13c5b.png)
-
+![image](https://user-images.githubusercontent.com/84000910/124490938-a7f87e00-dded-11eb-8fc5-ea025d5fe4ab.png)
 
 
 5. Circuit Breaker Destination Rule 생성
