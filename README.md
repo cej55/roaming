@@ -779,7 +779,7 @@ kubectl create configmap cm-roaming --namespace="ns-roaming" --from-literal=DB_I
 
 kubectl get cm -n ns-roaming
 
-![image](https://user-images.githubusercontent.com/84000910/124408353-089da180-dd81-11eb-87e6-7203bcb07a40.png)
+![image](https://user-images.githubusercontent.com/84000910/124408540-67631b00-dd81-11eb-8b51-ea77c90b5630.png)
 
 
 * 등록된 Config Map을 조회함
