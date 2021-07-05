@@ -924,7 +924,10 @@ EOF
 kubectl exec -it siege -n ns-roaming -- /bin/bash
 
 - 부하(siege) 노드 내부에서 부하를 발생시킨다.
-siege -c200 -t30S -v http://10.0.206.105:8080/reservations
+kubectl get all -n ns-roaming
+#service/reservations 아이피
+siege -c200 -t30S -v http://10.0.123.166:8080/reservations
+
 
 ![image](https://user-images.githubusercontent.com/84000909/122342775-f39ed100-cf7f-11eb-908e-814cf910f4f6.png)
 
