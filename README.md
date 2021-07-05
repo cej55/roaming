@@ -187,7 +187,7 @@ mvn spring-boot:run
 cd payment
 mvn spring-boot:run 
 
-cd rental
+cd romrental
 mvn spring-boot:run  
 
 cd reservation
