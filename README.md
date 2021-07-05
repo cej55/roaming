@@ -385,6 +385,7 @@ kubectl get svc -n ns-roaming
 ![image](https://user-images.githubusercontent.com/84000910/124413144-080a0880-dd8b-11eb-8d55-fdc59344a3e1.png)
 
 결과 확인
+
 ![image](https://user-images.githubusercontent.com/84000910/124420202-10b60b00-dd9a-11eb-9722-5f00e44b2aad.png)
 ![image](https://user-images.githubusercontent.com/84000910/124420235-24fa0800-dd9a-11eb-9ec8-e10066d34d62.png)
 ![image](https://user-images.githubusercontent.com/84000910/124420304-3c38f580-dd9a-11eb-80a8-ad99d7d0f83c.png)
