@@ -119,12 +119,12 @@
 
 
 ## Event Storming 결과
-* MSAEz 로 모델링한 이벤트스토밍 결과:  http://www.msaez.io/#/storming/U0bzsSn93uN7NxmqmG8mL6n0vz53/share/1d5fca6c8eb5408a3560d9c2e51c78d7
+* MSAEz 로 모델링한 이벤트스토밍 결과:  http://www.msaez.io/#/storming/ArHOHQiOHQe5ZYttQK2PJBwMF862/mine/b86a4045ee23728ac8fc1628ef30dd66
 
 
 ### 완성된 모형
 
-![image](https://user-images.githubusercontent.com/84000909/122478876-25a64680-d005-11eb-9295-14298277a597.png)
+![image](https://user-images.githubusercontent.com/84000910/123537803-50fb0500-d76c-11eb-9879-a940a0b70a0b.png)
 
 
 
