@@ -199,7 +199,7 @@ mvn spring-boot:run
 - 각 서비스내에 도출된 핵심 Aggregate Root 객체를 Entity 로 선언하였다: (예시는 Payment 마이크로 서비스). 이때 가능한 현업에서 사용하는 언어 (유비쿼터스 랭귀지)를 그대로 사용하려고 노력했다. 하지만, 일부 구현에 있어서 영문이 아닌 경우는 실행이 불가능한 경우가 있기 때문에 계속 사용할 방법은 아닌것 같다. (Maven pom.xml, Kafka의 topic id, FeignClient 의 서비스 id 등은 한글로 식별자를 사용하는 경우 오류가 발생하는 것을 확인하였다)
 
 ```
-package carsharing;
+package roaming;
 
 import javax.persistence.*;
 import org.springframework.beans.BeanUtils;
@@ -214,26 +214,25 @@ public class Payment {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
     private String reserveId;
-    private String carId;
+    private String phoneId;
     private String amount;
     private String userPhone;
     private String payType;
     private String payNumber;
     private String payCompany;
     private String payStatus;
+    private String payDate;
     private String payCancelDate;
-
 
     @PostUpdate
     public void onPostUpdate(){
-        if ("PayCanled".equals(this.getPayStatus()))
+        if ("PayCanled".equals(this.getpayStatus()))
         {
-            PayCanceled payCanceled = new PayCanceled();
-            BeanUtils.copyProperties(this, payCanceled);
-            payCanceled.publishAfterCommit();
-        }                           
+            Paycanceled Paycanceled = new Paycanceled();
+            BeanUtils.copyProperties(this, Paycanceled);
+            Paycanceled.publishAfterCommit();
+        }
     }
-
 
     public Long getId() {
         return id;
@@ -242,74 +241,76 @@ public class Payment {
     public void setId(Long id) {
         this.id = id;
     }
-    public String getReserveId() {
+    public String getreserveId() {
         return reserveId;
     }
 
-    public void setReserveId(String reserveId) {
+    public void setreserveId(String reserveId) {
         this.reserveId = reserveId;
     }
-    public String getCarId() {
-        return carId;
+    public String getphoneId() {
+        return phoneId;
     }
 
-    public void setCarId(String carId) {
-        this.carId = carId;
+    public void setphoneId(String phoneId) {
+        this.phoneId = phoneId;
     }
-    public String getAmount() {
+    public String getamount() {
         return amount;
     }
 
-    public void setAmount(String amount) {
+    public void setamount(String amount) {
         this.amount = amount;
     }
-    public String getUserPhone() {
+    public String getuserPhone() {
         return userPhone;
     }
 
-    public void setUserPhone(String userPhone) {
+    public void setuserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
-    public String getPayType() {
+    public String getpayType() {
         return payType;
     }
 
-    public void setPayType(String payType) {
+    public void setpayType(String payType) {
         this.payType = payType;
     }
-    public String getPayNumber() {
+    public String getpayNumber() {
         return payNumber;
     }
 
-    public void setPayNumber(String payNumber) {
+    public void setpayNumber(String payNumber) {
         this.payNumber = payNumber;
     }
-    public String getPayCompany() {
+    public String getpayCompany() {
         return payCompany;
-    }
-
-    public void setPayCompany(String payCompany) {
+    }                                                                                                                                                            1,1           
+    public void setpayCompany(String payCompany) {
         this.payCompany = payCompany;
     }
-    public String getPayStatus() {
+    public String getpayStatus() {
         return payStatus;
     }
 
-    public void setPayStatus(String payStatus) {
+    public void setpayStatus(String payStatus) {
         this.payStatus = payStatus;
     }
+    public String getpayDate() {
+        return payDate;
+    }
 
-    public String getPayCancelDate() {
+    public void setpayDate(String payDate) {
+        this.payDate = payDate;
+    }
+    public String getpayCancelDate() {
         return payCancelDate;
     }
 
-    public void setPayCancelDate(String payCancelDate) {
+    public void setpayCancelDate(String payCancelDate) {
         this.payCancelDate = payCancelDate;
-    }  
-
-
-}
-
+    }
+    
 ```
 - Entity Pattern 과 Repository Pattern 을 적용하여 JPA 를 통하여 다양한 데이터소스 유형 (RDB or NoSQL) 에 대한 별도의 처리가 없도록 데이터 접근 어댑터를 자동 생성하기 위하여 Spring Data REST 의 RestRepository 를 적용하였다
 ```
