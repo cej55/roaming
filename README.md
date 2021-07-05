@@ -364,24 +364,24 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
 ## Gateway
 
 gateway application.yml 각 서비스별  rest api url 경로 추가
-![image](https://user-images.githubusercontent.com/82005223/122397340-d97ee600-cfb3-11eb-9825-133430083bdd.png)
-
+![image](https://user-images.githubusercontent.com/84000910/124412003-8c0ec100-dd88-11eb-9777-0eae4b3efc50.png)
 
 
 - 빌드
 mvn package -Dmaven.test.skip=true
 
 - Docker 이미지 생성 및 ACR 등록
-az acr build --registry user04skccacr --image user04skccacr.azurecr.io/carsharing-gateway:latest --file Dockerfile .
+az acr build --registry user1414acr --image user1414acr.azurecr.io/roaming-gateway:latest --file Dockerfile .
 
 - Deployment 배포
-kubectl create deploy gateway --image=user04skccacr.azurecr.io/carsharing-gateway:latest -n ns-carsharing
+kubectl create deploy gateway --image=user1414acr.azurecr.io/roaming-gateway:latest -n ns-roaming
 
 - Service 배포
-kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n ns-carsharing
+kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n ns-roaming
 
 - Service External IP 확인
-kubectl get svc -n ns-carsharing
+kubectl get svc -n ns-roaming
+
 ![image](https://user-images.githubusercontent.com/84000909/122333701-7ec59a00-cf73-11eb-9209-f6fdde54868c.png)
 
 결과 확인
