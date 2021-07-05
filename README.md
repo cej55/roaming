@@ -422,29 +422,29 @@ reservation : HSQL DB
 ```
 # (Reservation) PaymentService.java
 
-
-package carsharing.external;
+package roaming.external;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
+//import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Date;
 
+//@FeignClient(name="payment", url="http://localhost:8083")  // payment url => http://localhost:8083
 @FeignClient(name="payment", url="${api.payment.url}")  // payment url => http://localhost:8083
 public interface PaymentService {
 
-    @RequestMapping(method= RequestMethod.POST, path="/pay")        
+    @RequestMapping(method= RequestMethod.POST, path="/pay")
     public boolean pay(@RequestParam("reserveId") String reserveId,
-                @RequestParam("carId") String carId,
-                @RequestParam("amount") String amount,
+                @RequestParam("phoneId") String phoneId,
                 @RequestParam("userPhone") String userPhone,
+                @RequestParam("amount") String amount,
                 @RequestParam("payType") String userpayType,
                 @RequestParam("payNumber") String payNumber,
                 @RequestParam("payCompany") String payCompany);
-
 }
 ```
 
@@ -461,44 +461,44 @@ public interface PaymentService {
     public String reserve(HttpServletRequest request, HttpServletResponse response)
         throws Exception {
         System.out.println("##### /reserve  called #####");
-     
-        String carId = request.getParameter("carId");
+
+        String phoneId = request.getParameter("phoneId");
         String rentalAddr = request.getParameter("rentalAddr");
         String retrieveAddr = request.getParameter("retriveAddr");
         String userPhone = request.getParameter("userPhone");
-        Long amount = Long.parseLong(request.getParameter("amount"));
+        String amount = request.getParameter("amount");
         String reserveDate = request.getParameter("reserveDate");
         String payType = request.getParameter("payType");
         String payNumber = request.getParameter("payNumber");
         String payCompany = request.getParameter("payCompany");
 
-        System.out.println("##### carId : " + carId);
+        System.out.println("##### phoneId : " + phoneId);
         System.out.println("##### amount : " + amount);
         System.out.println("##### userPhone : " + userPhone);
         System.out.println("##### payType : " + payType);
         System.out.println("##### payNumber : " + payNumber);
         System.out.println("##### payCompany : " + payCompany);
 
-        Reservation reservation = new Reservation();
-        reservation.setCarId(carId);
-        reservation.setRentalAddr(rentalAddr);
-        reservation.setRetrieveAddr(retrieveAddr);
-        reservation.setUserPhone(userPhone);
-        reservation.setAmount(amount);
-        reservation.setReserveDate(reserveDate);
-        reservation.setPayType(payType);
-        reservation.setPayNumber(payNumber);
-        reservation.setPayCompany(payCompany);
-                        
-        reservation  = reservationRepository.save(reservation);
+        Reservation Reservation = new Reservation();
+        Reservation.setphoneId(phoneId);
+        Reservation.setuserPhone(userPhone);
 
-        String reserveId = Long.toString(reservation.getId());        
+        Reservation.setamount(amount);
+
+        Reservation.setreserveDate(reserveDate);
+        Reservation.setpayType(payType);
+        Reservation.setpayNumber(payNumber);
+        Reservation.setpayCompany(payCompany);
+
+        Reservation  = ReservationRepository.save(Reservation);
+
+        String reserveId = Long.toString(Reservation.getId());
         System.out.println("##### reserveId : " + reserveId);
 
         boolean ret = false;
         try {
-            ret = ReservationApplication.applicationContext.getBean(carsharing.external.PaymentService.class)
-                .pay(reserveId, carId, String.valueOf(amount), userPhone, payType, payNumber, payCompany);
+            ret = ReservationApplication.applicationContext.getBean(roaming.external.PaymentService.class)
+                .pay(reserveId, phoneId, amount, userPhone, payType, payNumber, payCompany);
 
             System.out.println("##### /payment/pay  called result : " + ret);
         } catch (Exception e) {
@@ -510,12 +510,12 @@ public interface PaymentService {
             status = "Reserved";
         } else {
             status = "ReserveFailed";
-        } 
+        }
 
-        reservation.setReserveStatus(status);
-        reservation  = reservationRepository.save(reservation);
+        Reservation.setreserveStatus(status);
+        Reservation  = ReservationRepository.save(Reservation);
 
-        return status + " ReserveNumber : " + reserveId;          
+        return status + " ReserveNumber : " + reserveId;
     }
     
    -- Reservation.java에서 이벤트 송시
