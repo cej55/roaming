@@ -382,7 +382,7 @@ kubectl expose deploy gateway --type="LoadBalancer" --port=8080 -n ns-roaming
 - Service External IP 확인
 kubectl get svc -n ns-roaming
 
-![image](https://user-images.githubusercontent.com/84000909/122333701-7ec59a00-cf73-11eb-9209-f6fdde54868c.png)
+![image](https://user-images.githubusercontent.com/84000910/124413144-080a0880-dd8b-11eb-8d55-fdc59344a3e1.png)
 
 결과 확인
 
