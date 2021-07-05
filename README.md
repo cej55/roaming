@@ -781,7 +781,8 @@ kubectl get cm -n ns-roaming
 
 * 등록된 Config Map을 조회함
  
-![image](https://user-images.githubusercontent.com/84000909/122325689-01475d00-cf66-11eb-9d44-54d89bfb82db.png)
+![image](https://user-images.githubusercontent.com/84000910/124420981-85d61000-dd9b-11eb-92e3-84d25fae1d1f.png)
+
 
 ## 서킷 브레이커 : 장애격리(예약 시스템 장애 발생시)
 
