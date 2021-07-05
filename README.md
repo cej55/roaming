@@ -385,14 +385,11 @@ kubectl get svc -n ns-roaming
 ![image](https://user-images.githubusercontent.com/84000910/124413144-080a0880-dd8b-11eb-8d55-fdc59344a3e1.png)
 
 결과 확인
+![image](https://user-images.githubusercontent.com/84000910/124420202-10b60b00-dd9a-11eb-9722-5f00e44b2aad.png)
+![image](https://user-images.githubusercontent.com/84000910/124420235-24fa0800-dd9a-11eb-9ec8-e10066d34d62.png)
+![image](https://user-images.githubusercontent.com/84000910/124420304-3c38f580-dd9a-11eb-80a8-ad99d7d0f83c.png)
 
-![image](https://user-images.githubusercontent.com/84000909/122333866-bcc2be00-cf73-11eb-9d94-a477a843e4ee.png)
 
-![image](https://user-images.githubusercontent.com/84000909/122333892-c9471680-cf73-11eb-8050-7a4aed288ca5.png)
-
-![image](https://user-images.githubusercontent.com/84000909/122333931-d82dc900-cf73-11eb-8958-425151ce8230.png)
-
-![image](https://user-images.githubusercontent.com/84000909/122333958-e4198b00-cf73-11eb-8baa-33d89c2ddff3.png)
 
 ## 폴리글랏 퍼시스턴스
 
