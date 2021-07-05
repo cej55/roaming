@@ -849,6 +849,7 @@ kubectl create deploy siege --image=apexacme/siege-nginx -n  istio-test-ns
 ```
 생성된 Container 확인
 ![image](https://user-images.githubusercontent.com/84000910/124490938-a7f87e00-dded-11eb-8fc5-ea025d5fe4ab.png)
+![image](https://user-images.githubusercontent.com/84000910/124491698-86e45d00-ddee-11eb-8443-ce35204df721.png)
 
 
 5. Circuit Breaker Destination Rule 생성
