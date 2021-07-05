@@ -396,12 +396,13 @@ kubectl get svc -n ns-roaming
 ## 폴리글랏 퍼시스턴스
 
 앱프런트 (app) 는 서비스 특성상 많은 사용자의 유입과 상품 정보의 다양한 콘텐츠를 저장해야 하는 특징으로 인해 H2 DB와 HSQL DB에 부착시켰다.
-Reservation : HSQL DB
-나머지 Payment/rental/Customer : H2 DB
+reservation : HSQL DB
+나머지 payment/romrental/customer : H2 DB
 
-## Reservation pom.xml
+## reservation pom.xml
 
-![image](https://user-images.githubusercontent.com/84000909/122356555-df61d080-cf8d-11eb-9a2d-d860e54c5e08.png)
+![폴리그랏 캡쳐 화면](https://user-images.githubusercontent.com/84000910/124422791-de5adc80-dd9e-11eb-9685-02d0dda677f9.PNG)
+
 
 
 ##처리 결과 : 정상
