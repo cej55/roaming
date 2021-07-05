@@ -887,8 +887,7 @@ siege -c2 -t50S -v --content-type "application/json" 'http://52.141.59.66:8080/r
 ![image](https://user-images.githubusercontent.com/84000910/124493753-f4918880-ddf0-11eb-9ef5-296bce88bf9d.png)
 
 6.모니터링 시스템 (kiali)에서 확인
-![image](https://user-images.githubusercontent.com/34739884/122333511-41610c80-cf73-11eb-8cf8-47b16dd2941b.png)
-![image](https://user-images.githubusercontent.com/84000909/122505691-d3cae400-d037-11eb-8dc6-ccd7212efd0a.png)
+![image](https://user-images.githubusercontent.com/84000910/124494970-77ffa980-ddf2-11eb-88b7-14b088703474.png)
 
 
 운영시스템은 죽지 않고 지속적으로 CB 에 의하여 적절히 회로가 열림과 닫힘이 벌어지면서 자원을 보호하고 있음을 보여줌. 하지만, 62.45% 가 성공하였고, 37%가 실패했다는 것은 고객 사용성에 있어 좋지 않기 때문에 Retry 설정과 동적 Scale out (replica의 자동적 추가,HPA) 을 통하여 시스템을 확장 해주는 후속처리가 필요.
