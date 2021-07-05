@@ -837,8 +837,7 @@ label에 istio-injection enabled 확인
 kubectl get namespace istio-test-ns -o yaml
 
 ```
-![image](https://user-images.githubusercontent.com/84000909/122345051-61e49300-cf82-11eb-9922-bab4aa353e68.png)
-
+![image](https://user-images.githubusercontent.com/84000910/124490560-34ef0780-dded-11eb-8427-c228e59be98a.png)
 
 
 
