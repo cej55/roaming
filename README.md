@@ -956,7 +956,7 @@ siege -c60 -t60S -r10 -v http get http://reservation:8080/reservations
 
 - 새버전으로의 배포 시작
 ```
-kubectl apply -f live_deployment.yml -n ns-carsharing
+kubectl apply -f live_deployment.yml -n ns-roaming
 ```
 ![image](https://user-images.githubusercontent.com/84000909/122495749-8e9db680-d025-11eb-81f4-833b667b76b2.png)
 
