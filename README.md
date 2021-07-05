@@ -987,7 +987,7 @@ kubectl apply -f kubernetes/read_deployment.yaml
 ```
 yaml파일 수정 및 배포 완료
 ```
-![image](https://user-images.githubusercontent.com/84000909/122514646-38416f80-d047-11eb-8f4e-d3bd40d94607.png)
+![image](https://user-images.githubusercontent.com/84000910/124497783-5dc7ca80-ddf6-11eb-80cf-a9ca2505d704.png)
 
 
 ```
