@@ -338,9 +338,9 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
 
 
   - reservation 서비스의 반납처리
-    http://20.194.53.119:8080/return_action.html
+    http://20.194.1.155:8080/return_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000909/122334666-09f35f80-cf75-11eb-88da-53523677a7d8.png)
+    ![image](https://user-images.githubusercontent.com/84000910/124428109-3a296380-dda7-11eb-9ced-50a32073ee4e.png)
     
 
   - rental 서비스의 차량회수
@@ -349,15 +349,14 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
     ![image](https://user-images.githubusercontent.com/84000909/122334704-17a8e500-cf75-11eb-871e-06daa2a46b3d.png)
 
   - reservation 서비스의 예약취소
-    http://20.194.53.119:8080/cancel_action.html
+    http://20.194.1.155:8080/cancel_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000909/122334733-22637a00-cf75-11eb-856c-8a27a3a0fd9e.png)
-
+   ![image](https://user-images.githubusercontent.com/84000910/124428272-72c93d00-dda7-11eb-9898-ea77b63fbd97.png)
 
 ## CQRS
 
   - 예약/대여 상태 확인을 위한 CQRS구현(myPages)
-    http://20.194.53.119:8080/myPages
+    http://20.194.1.155:8080/mypages
 
     ![image](https://user-images.githubusercontent.com/84000909/122336569-07463980-cf78-11eb-979e-19ab0d82c36c.png)
 
