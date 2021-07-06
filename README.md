@@ -880,11 +880,13 @@ IP주소 확인
 
 정상 동작일떄 확인
 siege -c1 -t30S -v --content-type "application/json" 'http://52.141.59.66:8080/reservations POST {"resevedId": "010", "amonut": "1"}'
+
 ![image](https://user-images.githubusercontent.com/84000910/124493509-ac726600-ddf0-11eb-8ddc-96716ac36393.png)
 
 
 Circuit Breaker 동작 확인
 siege -c2 -t50S -v --content-type "application/json" 'http://52.141.59.66:8080/reservations POST {"resevedId": "010", "amonut": "1"}'
+
 ![image](https://user-images.githubusercontent.com/84000910/124493753-f4918880-ddf0-11eb-9ef5-296bce88bf9d.png)
 
 6.모니터링 시스템 (kiali)에서 확인
