@@ -331,7 +331,7 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
   - reservation 서비스의 예약처리
     http://20.194.53.119:8080/reserve_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000909/122334597-f0eaae80-cf74-11eb-81c8-e69eed108473.png)
+    ![image](https://user-images.githubusercontent.com/84000910/124527273-34cc2780-de40-11eb-9971-e731eab6d17b.png)
 
 
   - rental 서비스의 대여처리
