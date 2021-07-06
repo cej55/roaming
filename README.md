@@ -977,7 +977,7 @@ kubectl apply -f kubernetes/read_deployment.yaml
 - 동일한 시나리오로 재배포 한 후 Availability 확인:
 
 
-## Readiness 다시 작성
+## 다시작성 - Readiness 
 
 ```
 yaml파일 수정 및 배포 완료
