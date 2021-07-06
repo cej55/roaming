@@ -345,20 +345,13 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
 
 
   - reservation 서비스의 반납처리
-    http://20.194.1.155:8080/return_action.html
+    http://20.194.111.173:8080/return_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000910/124527621-01d66380-de41-11eb-9e68-b69acf74d3c0.png)
+    ![image](https://user-images.githubusercontent.com/84000910/124545493-17a95000-de64-11eb-9849-51079185f8dc.png)
     
+    ![image](https://user-images.githubusercontent.com/84000910/124545536-314a9780-de64-11eb-9699-618410e43fc2.png)
 
-  - rental 서비스의 차량회수
-    http://20.194.53.119:8080/retrieve_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000909/122334704-17a8e500-cf75-11eb-871e-06daa2a46b3d.png)
-
-  - reservation 서비스의 예약취소
-    http://20.194.1.155:8080/cancel_action.html
-
-   ![image](https://user-images.githubusercontent.com/84000910/124527632-07cc4480-de41-11eb-9b0c-aabfe005bf12.png)
 
 ## CQRS
 
