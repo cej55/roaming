@@ -326,18 +326,22 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
 }
 
 ```
-- 적용 후 REST API 의 테스트 : 
+- 적용 후 REST API 의 테스트 : (참고-중간에 서비스재기동하여 IP변경됨 20.194.1.155->20.194.111.173)
 
   - reservation 서비스의 예약처리
-    http://20.194.1.155:8080/reserve_action.html
+   http://20.194.111.173:8080/reserve_action.html
+   
+   ![image](https://user-images.githubusercontent.com/84000910/124544832-dcf2e800-de62-11eb-8093-33326629f45d.png)
 
-    ![image](https://user-images.githubusercontent.com/84000910/124527273-34cc2780-de40-11eb-9971-e731eab6d17b.png)
+
+   ![image](https://user-images.githubusercontent.com/84000910/124544794-c77dbe00-de62-11eb-99cf-44b617415f39.png)
 
 
-  - rental 서비스의 대여처리
-    http://20.194.53.119:8080/rental_action.html
 
-    ![image](https://user-images.githubusercontent.com/84000909/122334637-fea03400-cf74-11eb-86f3-6bb3dbdff5bb.png)
+  - rental 서비스의 로밍대여처리
+    http://20.194.111.173:8080/romrentals
+
+    ![image](https://user-images.githubusercontent.com/84000910/124544909-0875d280-de63-11eb-8f2f-7a7fd1b8b869.png)
 
 
   - reservation 서비스의 반납처리
@@ -359,9 +363,9 @@ public interface PaymentRepository extends PagingAndSortingRepository<Payment, L
 ## CQRS
 
   - 예약/대여 상태 확인을 위한 CQRS구현(myPages)
-    http://20.194.1.155:8080/mypages
+    http://20.194.111.173:8080/mypages
 
-    ![image](https://user-images.githubusercontent.com/84000909/122336569-07463980-cf78-11eb-979e-19ab0d82c36c.png)
+    ![image](https://user-images.githubusercontent.com/84000910/124545089-58ed3000-de63-11eb-8b73-eccd88f55da7.png)
 
 
 
