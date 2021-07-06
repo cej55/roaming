@@ -976,8 +976,26 @@ kubectl apply -f kubernetes/read_deployment.yaml
 
 - 동일한 시나리오로 재배포 한 후 Availability 확인:
 
+## 추가 작성 - 셀프힐링 Liveness probe
 
-## 다시작성 - Readiness 
+-deployment.yml 파일에 Liveness porbe 추가 
+
+![image](https://user-images.githubusercontent.com/84000910/124556695-8c37bb00-de73-11eb-8096-32931935fbed.png)
+
+
+-부하 발생
+siege -c2 -t120S -v --content-type "application/json" 'http://gateway:8080/reservations POST {"reserveId": "5", "amonut": "1"}' 
+
+![image](https://user-images.githubusercontent.com/84000910/124556491-4da20080-de73-11eb-99ac-d95358e5b8a5.png)
+
+
+-부하 발생 후 모니터링시 restart건수 증가 확인
+: watch -n 1 kubectl get pod -n ns-roaming
+
+![image](https://user-images.githubusercontent.com/84000910/124555679-5514da00-de72-11eb-9916-34bab162c183.png)
+
+
+## 추가작성 - Readiness 
 
 ```
 yaml파일 수정 및 배포 완료
@@ -1005,21 +1023,4 @@ kubectl apply -f deployment.yml -n ns-roaming
 
 배포기간 동안 Availability 가 변화없기 때문에 무정지 재배포가 성공한 것으로 확인됨.
 
-## 셀프힐링 Liveness probe
-
--deployment.yml 파일에 Liveness porbe 추가 
-
-![image](https://user-images.githubusercontent.com/84000910/124556695-8c37bb00-de73-11eb-8096-32931935fbed.png)
-
-
--부하 발생
-siege -c2 -t120S -v --content-type "application/json" 'http://gateway:8080/reservations POST {"reserveId": "5", "amonut": "1"}' 
-
-![image](https://user-images.githubusercontent.com/84000910/124556491-4da20080-de73-11eb-99ac-d95358e5b8a5.png)
-
-
--부하 발생 후 모니터링시 restart건수 증가 확인
-: watch -n 1 kubectl get pod -n ns-roaming
-
-![image](https://user-images.githubusercontent.com/84000910/124555679-5514da00-de72-11eb-9916-34bab162c183.png)
 
