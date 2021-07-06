@@ -982,8 +982,6 @@ kubectl apply -f kubernetes/read_deployment.yaml
 ```
 yaml파일 수정 및 배포 완료
 ```
-![image](https://user-images.githubusercontent.com/84000910/124497783-5dc7ca80-ddf6-11eb-80cf-a9ca2505d704.png)
-
 
 ```
 상태 확인을 위해 소스를 재 빌드함
