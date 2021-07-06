@@ -994,8 +994,6 @@ az acr build --registry user1414acr --image user1414acr.azurecr.io/roaming-reser
 kubectl apply -f deployment.yml -n ns-roaming
 
 ```
-![image](https://user-images.githubusercontent.com/84000909/122515802-ed285c00-d048-11eb-9756-2b6df549c3e1.png)
-
 
 ```
 최종 결과 확인
