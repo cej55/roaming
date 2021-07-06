@@ -407,10 +407,6 @@ reservation : HSQL DB
 
 
 
-##처리 결과 : 정상
-![image](https://user-images.githubusercontent.com/84000909/122358828-facddb00-cf8f-11eb-874e-b53817c2398d.png)
-
-
 
 
 ## 동기식 호출 과 Fallback 처리
