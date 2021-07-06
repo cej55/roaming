@@ -985,12 +985,14 @@ yaml파일 수정 및 배포 완료
 
 ```
 상태 확인을 위해 소스를 재 빌드함
-```
-![image](https://user-images.githubusercontent.com/84000909/122515117-ee0cbe00-d047-11eb-91a2-bc6c9bb76be1.png)
-![image](https://user-images.githubusercontent.com/84000909/122515208-11376d80-d048-11eb-9d66-527bee6022c7.png)
-
-```
 신규 버전을 배포함
+
+mvn package  
+
+az acr build --registry user1414acr --image user1414acr.azurecr.io/roaming-reservation:latest --file Dockerfile .
+
+kubectl apply -f deployment.yml -n ns-roaming
+
 ```
 ![image](https://user-images.githubusercontent.com/84000909/122515802-ed285c00-d048-11eb-9756-2b6df549c3e1.png)
 
